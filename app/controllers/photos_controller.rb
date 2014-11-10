@@ -31,5 +31,15 @@ class PhotosController < ApplicationController
     render 'index'
   end
 
+  def edit_form
+    @updated_row = Photo.find(params[:id])
+  end
+
+  def update_row
+    updated_row = Photo.find(params[:id])
+    updated_row.source = params[:the_source]
+    updated_row.caption = params[:the_caption]
+    updated_row.save
+  end
 
 end
