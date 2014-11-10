@@ -9,4 +9,17 @@ class PhotosController < ApplicationController
     @detail_view = Photo.find(params[:id])
   end
 
+  def new_form
+    #abc
+  end
+
+  def create_row
+    new_row = Photo.new
+    new_row.source = params[:the_source]
+    new_row.caption = params[:the_caption]
+    new_row.save
+
+    @test = new_row
+  end
+
 end
