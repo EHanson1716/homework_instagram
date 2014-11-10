@@ -22,4 +22,14 @@ class PhotosController < ApplicationController
     @test = new_row
   end
 
+  def destroy
+    target_row = Photo.find(params[:id])
+    target_row.destroy
+
+    @list_of_photos = Photo.all
+
+    render 'index'
+  end
+
+
 end
